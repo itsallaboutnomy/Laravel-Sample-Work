@@ -110,7 +110,9 @@ MAX_RATE_LIMIT_ERROR_CODE=429
 ##Testing
 **Inserting test data in db tables.**
 - After steping up host, setting up db, and import db schema run following command:
-```php artisan db:seed
+
+```php
+ php artisan db:seed
 ```
 - It will insert 20, 40, and 40 records into `applications`, `devices`, and `subscriptions` table respectively.
 - Alternatively can  run the following commands:
@@ -126,11 +128,12 @@ php artisan tinker
 ---
 
 #Worker
+---
 
 - For subscription verification following artisan command can be added to cron or server-side triggers.
 ```php
 php artisan verify:subscription
 ```
 #Reporting
-
+---
 - Reporting API will return data in json format.
