@@ -25,7 +25,7 @@ GOOGLE_VERIFY_SUBS_URL=<host_url>/api/mock/verify-subs-google
 
 THIRD_PARTY_ENDPOINT=<host_url>/api/mock/third-party-endpoint
 
-
+MAX_RATE_LIMIT=1000
 
 MAX_RATE_LIMIT_ERROR_CODE=429
 ```
@@ -116,12 +116,12 @@ MAX_RATE_LIMIT_ERROR_CODE=429
 ```
 - It will insert 20, 40, and 40 records into `applications`, `devices`, and `subscriptions` table respectively.
 - Alternatively can  run the following commands:
-
+    
 
     php artisan tinker
-    \App\Models\Application::factory()->count(20)->create()
-    \App\Models\Device::factory()->count(20)->create()
-	\App\Models\Subscription::factory()->count(20)->create()
+        \App\Models\Application::factory()->count(20)->create()
+        \App\Models\Device::factory()->count(20)->create()
+    	\App\Models\Subscription::factory()->count(20)->create()
 
 **Count value for Subscription and Device should be same**
 
