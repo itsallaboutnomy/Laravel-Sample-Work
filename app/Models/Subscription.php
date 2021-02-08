@@ -10,6 +10,7 @@ class Subscription extends Model
     use HasFactory;
     protected $guarded;
     public $timestamps = true;
+    protected $table = 'subscriptions';
     /**
      * @var mixed|string
      */

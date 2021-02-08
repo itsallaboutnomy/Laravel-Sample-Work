@@ -40,14 +40,14 @@ class PlatformController extends Controller {
 
     protected function verificationReceipt($number): bool
     {
-        $flag = false;
+        $flag = true;
 
         //Getting last digit
         preg_match_all('/\d+/', $number, $numbers);
         $lastFullNum = end($numbers[0]);
         $lastDigit = substr($lastFullNum, - 1);
         if ($lastDigit % 2 == 0) {
-            $flag = true;
+            $flag = false;
         };
         return $flag;
     }
@@ -110,7 +110,7 @@ class PlatformController extends Controller {
             $bol = rand(0, 1);
             if ($bol) {
                 $data['success'] = false;
-                $data['error'] = \Cong::get('values.max_rate_limit_error_code');;
+                $data['error'] = \Config::get('values.max_rate_limit_error_code');;
             }
         }
         return $data;

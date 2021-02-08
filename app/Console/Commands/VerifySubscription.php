@@ -8,7 +8,6 @@ use App\Models\Subscription;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Exceptions\ThrottleRequestsException;
-use mysql_xdevapi\Exception;
 
 
 class VerifySubscription extends Command {
@@ -88,7 +87,7 @@ class VerifySubscription extends Command {
         $success = \Arr::get($response, 'success');
         $error = \Arr::get($response, 'error');
         $status = \Arr::get($response, 'status');
-        $rateLimitError = \Cong::get('values.max_rate_limit_error_code');
+        $rateLimitError = \Config::get('values.max_rate_limit_error_code');
         if (!$success) {
             if ($error == $rateLimitError) {
                 Log::error('Rate limit error for receipt id '.$subscription->receipt_id);
