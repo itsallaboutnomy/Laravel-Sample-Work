@@ -101,7 +101,6 @@ class PlatformController extends Controller {
      */
     protected function processSubsVerification(): array
     {
-        define(RATE_LIMIT_ERROR_CODE, 499);
         $receiptId = \request('receipt_id');
         $data = [];
         $data['success'] = true;
@@ -111,7 +110,7 @@ class PlatformController extends Controller {
             $bol = rand(0, 1);
             if ($bol) {
                 $data['success'] = false;
-                $data['error'] = RATE_LIMIT_ERROR_CODE;
+                $data['error'] = \Cong::get('values.max_rate_limit_error_code');;
             }
         }
         return $data;

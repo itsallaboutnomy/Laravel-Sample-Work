@@ -77,7 +77,6 @@ class VerifySubscription extends Command {
 
     protected function verify($subscription, $url)
     {
-        define(RATE_LIMIT_ERROR_CODE, 499);
         $response = Http::withHeaders([
             'username' => $subscription->device->app->username,
             'password' => md5($subscription->device->app->password),

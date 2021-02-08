@@ -25,7 +25,7 @@ GOOGLE_VERIFY_SUBS_URL=<host_url>/api/mock/verify-subs-google
 
 THIRD_PARTY_ENDPOINT=<host_url>/api/mock/third-party-endpoint
 
-MAX_RATE_LIMIT=1000
+
 
 MAX_RATE_LIMIT_ERROR_CODE=429
 ```
