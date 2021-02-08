@@ -1,18 +1,32 @@
-<link rel="stylesheet" href="editormd/css/editormd.css" />
-<div id="test-editor">
-    <textarea style="display:none;">### Editor.md
+###Teknasyon PHP Challenge
+---
+#####Technical Specifications
+- PHP Version 7.4
+- MySQL Version 5.7
+- Laravel Framework Version 8
+---
+##Instructions
+- Config host
+- Checkout master branch
+- Setup DB (DB schema is in Schema directory on root)
+- Make following changes in .evn file
 
-**Editor.md**: The open source embeddable online markdown editor, based on CodeMirror & jQuery & Marked.
-    </textarea>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="editormd/editormd.min.js"></script>
-<script type="text/javascript">
-    $(function() {
-        var editor = editormd("test-editor", {
-            // width  : "100%",
-            // height : "100%",
-            path   : "editormd/lib/"
-        });
-    });
-</script>
+```
+DB_DATABASE=<db_name>
+APP_URL=<host_url>
+OS_APPLE=iOS;
+OS_APPLE=GOOGLE;
+
+APPLE_VERIFY_URL=<host_url>/api/mock/ios
+GOOGLE_VERIFY_URL=<host_url>/api/mock/google
+
+APPLE_VERIFY_SUBS_URL=<host_url>/api/mock/verify-subs-ios
+GOOGLE_VERIFY_SUBS_URL=<host_url>/api/mock/verify-subs-google
+
+THIRD_PARTY_ENDPOINT=<host_url>/api/mock/third-party-endpoint
+
+MAX_RATE_LIMIT=1000
+
+MAX_RATE_LIMIT_ERROR_CODE=429
+```
+#####Alternatively you can copy .env.example contents into .env file
